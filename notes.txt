@@ -1,0 +1,101 @@
+1. questions 
+--what is web3?
+build base on blockchain, Decentralization, user has ownership of data and digital asset.
+poblicly accessable on blockchain 
+enhanced personazation, user control who canuse it , where it goes
+enhanced privacy and security
+
+
+----------------------------------------------------------------------------
+--what is blockchain?
+* concept of blockchain
+    crypto as digital currency, nft(img or media) as digital assets.
+    block is record of transiactions and data, chain is connection to connect each block 
+    decentralization: data speared across different computer, if one lost, still have other block data record, no central controll
+    no one no computer has ability overwrite or change info, has transparency and anoymity 
+    anyone can go any block to go over transiactions 
+    you dont need self identity to store a data into blockchain
+    imuutability: it cant be changed or removed once added into blockchain(no tricky people go change things) 
+    it is a database record every infomation an transaction that everyone can see but no one can modify , no one can own the data
+
+* how it workds
+    block contains transaction with sender, receiver and data, and has to identify the transaction, and the hash is linked to the previous blockchanin hash so these two block are connected form a chain.
+    has make blockchian inmutable because on data change will make hash change big, and every block after change block have to change the has becausehas is part of block to generate next hash
+    add: multiple nodes need to agree inorder to add a block to the chain, no one can add block without other block agree 
+    use prrof of stake and proof of work 
+* visual expample
+    its like a library with bunch of book(block) on shelf , each book has a number(chain) and what is the previous book(hash), only way to add book is ask librian(proof of work)
+* bitcoin and ethereum
+    bitcoin: a block chian store transactions of digital currency       
+             proof of work, solve comlex math problems reward with digital currency(bitcoin), fix amout currency can be mined 
+    Ethereum: not only ability store value, also broght utility and application, also create small program can store on            the  blockchain, these program called smart contracts , because of ability of store not only transaction but also grogram, it introduce gas, a fee must pay when transaction or store data in blockchain, whne paid gas(with etherum), it destroyed, so ethereumhas no hard cap, it called burned. 
+    evm (ethereum virtual machine): create smart contract for ethereum bolockchain, other blockchain also build on top of ethereum, also evm compatable, you can build a evm capatable program and deploy on all evm capatable blockchian, this will build connections between all these evm compatable blockchains, they can communicate, develop a evm compatable program can put on all blockchain and it works the same way
+----------------------------------------------------------------------------
+--what is smart contract?
+* types of smart contract standards
+    a program like real worl contract, wiouth third party notary, we define conditions in contract, when condition met, it automaticali exucte contact, because its on blockchain, no sneaky action can be done! immutability!!! 
+    two party sign digital signature,( it can be signed by wallet)， contract are if else statment will exucte when condition met(contract: interactive will agree send me 10 token, condition: if interactor has 10 token in wallet), contract excut it, no middle man taken money and send it like bank do
+    its self excuting program, its transparent , every one can see the code and what contract do before interactive with it (transaction, sending data)
+    its like vending machine, without cashier, machine despense item when certian condition met(right money insert)
+
+* pre-build contracts
+
+* Deploy ERC20, ERC721 and ERC1155
+
+* thirdweb dashbord
+
+* solidity basics
+
+* Create a custom smart contract
+
+* Deploy and publish
+
+
+----------------------------------------------------------------------------
+--what is a wallet?
+can contain digital currenct, digital assets, and digital asset help idetify certain things 
+* wallet keys 
+     private key and public key
+     when create wallet, will give a private key for that wallet,
+     public key is use when verify a transaction when interactive with the blockchain
+     *** private key must be carryed secure(gain access to the wallet)
+
+    --software/Hot wallet: store digital on web or mobile-- can use it any time anywhere
+    -- hardware/ cold wallet: physical devide like a usb-- need have device to interactive with blockchain
+* wallet connectivity
+
+* send and recieve assets
+
+----------------------------------------------------------------------------
+--what is thirdweb?
+ development framwork allows user build launch manage web3 application and games even mobile app 
+ acc number: ericrealtor1997@gmail.com
+ Ethereum Virtual Machine (EVM) 
+software development kit (SDK)
+ethereum request for comments(ERC)
+non fungible token(NFT) 
+
+====================================================================================================
+
+2. Applications 
+-- React SDK
+
+----------------------------------------------------------------------------
+-- UI Components
+
+----------------------------------------------------------------------------
+-- Build application for:
+* ERC20 
+  digital  currency token generated by smart contract, same type of token, fungible tokens, standard token , can be create destroy, transfered.
+
+* ERC721
+  standard NFT contracts,unlike ERC20 , each token in erc721 is uniq version of token generated by smart contract
+
+* ERC1155
+    kind of combines erc20 and erc721, semi-fungible tokens, can create different token with in your smart contract, each token can have multiple quantity , unlike erc721 can create one of one art piece, each one will be only one exist,with erc5511 you can create multiple copies art piece
+
+* Custom smart contracts
+
+
+* Staking
+

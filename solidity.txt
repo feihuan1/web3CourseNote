@@ -1,0 +1,130 @@
+-- variables 
+    address  
+    //could be wallet, smart contract
+        address userAdress = "0x21874y648752849";   
+
+    string 
+        string message = "hello world";
+
+    bool 
+        bool isReady = true;
+
+    uint 
+    // small number for max supply of NFTs
+        uint8 MAX_SUPPLY = 10; 
+
+    // big number
+        uint256 WAIT_TIME = 1 days;
+
+            uint8 (8bit)    number range 0 to 255 
+            uint16 (26bit)               0 to 65535 
+            uint128 (128bit)             0 to really big number
+            uint256 (256bit)             0 to really big number
+
+-- functions 
+public: everyone can see 
+private: can use only in the contract, cant click,
+internal: can be only use in contract and other inheriting contract 
+external: can be use only extenal contracts (save gas fee)
+view: read only, function dont modify the states,
+pure: no access at all, no modify state no read, 
+memory: store the variable in temp memory and use it in this function
+
+contract Basic {
+    some internal func
+}
+
+contract Advanced is Basic {
+    can use or modify all internal func and vars in Basic
+}
+
+         name      type       return type
+function get(string memory _tweet) public view returns (uint) {
+    return count
+}
+
+-- mapping 
+similar as object
+contract MappingExample {
+    // Declaring a mapping with address keys and uint values
+    // if have multyple key value type , use multiple mapping
+    mapping(address => uint) public balances;
+
+    // Function to update the balance for a specific address
+    function updateBalance(address account, uint newBalance) public {
+        balances[account] = newBalance;
+    }
+}
+
+-- array
+list of thins like js
+
+contract Array {
+    // several ways to initialize an array
+    uint[] public arr;
+    uint[] public arr2 = [1,2,3];
+
+    //fixed sized array, all elements initialized to 0
+    uint[10] public myFixedSizeArr;
+    string[5] public name;
+
+    function get(uint i) public view returns(uint) {
+        return arr[i];
+    }
+
+    function addToArr(uint value) public {
+        arr.push(value);
+    }
+
+    function getLength() public view returns (uint) {
+        return arr.length;
+    }
+
+}
+
+--struct 
+ group of variables types, like interface
+
+    contract teslaRegistry {
+        struct Tesla {
+            string model;
+            uint256 year; 
+            string color; 
+            uint mileage;
+            string vin;
+        }
+
+        // define array of Tesla item
+        Tesla[] public teslas;
+
+        // push new struct in array 
+        function addTesla(string memory model, uint256 year, string memory color, uint mileage, string memory vin) public {
+            Tesla memory newTesla = Tesla({
+                model: model, 
+                year: year, 
+                color: color, 
+                mileage: mileage, 
+                vin: vin
+            });
+
+            teslas.push(newTesla);
+        }
+    }
+
+-- REQUIRE
+    conditional statement ,just like if statement, but no else, if condition is true, will go out of the entire function
+
+    exp: 
+        contract SimpleToken {
+            unit256 public maxPerMint = 3; 
+
+            function mint (unit256 amount) public{
+                require( amount <= maxPerMint, "No more than 3 allowed" ); 
+                ... 
+                _mint(amount)
+            }
+        }
+define a max per mint 3, then make function if amount transfer greater than maxPerMint, it's not allowed. !! and exit the whole function, not running the code after, require(condition, error message)
+
+--MODIFIERS
+   building blocks, building something on top of what you have
