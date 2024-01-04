@@ -127,4 +127,29 @@ contract Array {
 define a max per mint 3, then make function if amount transfer greater than maxPerMint, it's not allowed. !! and exit the whole function, not running the code after, require(condition, error message)
 
 --MODIFIERS
-   building blocks, building something on top of what you have
+   building blocks, building something on top of what you have, add behavior to a function; 
+   exp: 
+
+   contract Test {
+
+    address punlic owner; 
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "You are not the woner"); 
+        _;
+    }
+
+    function changeOwner(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+
+   }
+
+     construct only run when contract deploy, means owner is defined when contruct deploy;
+     require-- if current msg.sender === owner, then run the rest of code, other wise throw error msg; 
+     _ in modifier means do require first then run the function, it means other logic of this function, it can apply to any function 
+     apply modifier by add name before function opens
