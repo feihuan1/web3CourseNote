@@ -153,3 +153,25 @@ define a max per mint 3, then make function if amount transfer greater than maxP
      require-- if current msg.sender === owner, then run the rest of code, other wise throw error msg; 
      _ in modifier means do require first then run the function, it means other logic of this function, it can apply to any function 
      apply modifier by add name before function opens
+
+     -- Events
+      notifications for the blockchain,
+      1. use app fire a function create tweet, 
+      2. data save to blockchain means a EVENTS "i have created a tweet", 
+      3. app lesten to blockchain, 
+      4. block chain tells app, there is an event update, user get notifications
+      
+      // the indexed keyword is used in the context of event parameters. When you declare an event with the indexed keyword for one or more parameters, it has implications on how the events are stored and can be filtered when querying the blockchain.
+
+        exp: 
+            contract EventExample {
+                // define event
+                event EventName(uint256 indexed datal, string data2)
+                
+                function someFunc() public {
+                    ... 
+                    // emit the event to save on blockchain side
+                    emit EventName(datal, data2)
+                }
+            }
+    // The datal parameter is marked as indexed. This means that when an event of EventName is emitted, the value of datal will be stored as a separate topic in the event log, making it more efficient to filter events based on this parameter when querying the blockchain.
