@@ -175,3 +175,15 @@ define a max per mint 3, then make function if amount transfer greater than maxP
                 }
             }
     // The datal parameter is marked as indexed. This means that when an event of EventName is emitted, the value of datal will be stored as a separate topic in the event log, making it more efficient to filter events based on this parameter when querying the blockchain.
+
+
+    -- loops almost exact same as JS 
+        exp: (for loop)  
+        (pure: dont read or modify contract state, view: only read contract state, payable: read and modify)
+        function countUp(uint limit) public oure returns(uint) {
+            uint sum = 0; 
+            for(uint i = 1; i <= limit; i++) {
+                sum += i;
+            }
+            return sum;
+        }
