@@ -28,7 +28,9 @@ internal: can be only use in contract and other inheriting contract
 external: can be use only extenal contracts (save gas fee)
 view: read only, function dont modify the states,
 pure: no access at all, no modify state no read, 
-memory: store the variable in temp memory and use it in this function
+memory: store the variable in temp memory and use it in this function 
+
+// add _ infront of params is common practise
 
 contract Basic {
     some internal func
