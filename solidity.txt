@@ -191,11 +191,13 @@ define a max per mint 3, then make function if amount transfer greater than maxP
             return sum;
         }
 
---inheritance 
+--inheritance  
+    usually import from "openzeppelin" library
     inferits functionality from other contract, like extends in JS class; use "is" key workds
     exp: 
 
-        contract Parent{
+    // if add abstract keyword, contract is importable
+       (abstract)  contract Parent{
             uint256 public parentData; 
             ...
         }
