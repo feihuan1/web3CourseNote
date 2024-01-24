@@ -211,3 +211,34 @@ define a max per mint 3, then make function if amount transfer greater than maxP
                 super.someFunction()
             }
         }
+
+--contract interaction 
+        contractA {
+            uint256 public data; 
+            function setData(uint256 _data) external {
+                data = _data
+            }
+        }
+        -------------------------------------------
+        // interface is same as typeScript, define what expect in this interface
+        interface IContractA {
+            function setData(uint256 _data) external; 
+            function data() external view returns (uint256)
+        }
+
+        contract ContractB {
+            // define contractA
+            IContractA public contractA;
+
+            // pass the contract address in constructor defines contractA
+            constructor(address _contractAAddress) {
+                contractA = IContractA(_contractAAddress)
+            }
+
+            modify contractA data inside contractB
+            function setDataInContractA(uint256 _data) extenal { 
+                // call function in extenal contract 
+                contractA.setData(_data)
+            }
+
+        }
