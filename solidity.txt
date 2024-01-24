@@ -129,7 +129,7 @@ contract Array {
 define a max per mint 3, then make function if amount transfer greater than maxPerMint, it's not allowed. !! and exit the whole function, not running the code after, require(condition, error message)
 
 --MODIFIERS
-   building blocks, building something on top of what you have, add behavior to a function; 
+   building blocks, building something on top of what you have, add behavior to a function, can work as a filter like if statement; 
    exp: 
 
    contract Test {
